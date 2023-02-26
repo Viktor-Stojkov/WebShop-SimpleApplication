@@ -1,0 +1,33 @@
+﻿@using WebShop_Domain.Models;
+
+@model List<Products>
+
+<a class="btn btn-secondary" asp-controller="Product" asp-action="Create">Нов Продукт</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Ид</th>
+            <th scope="col">Име на Продукт</th>
+            <th scope="col">Количина</th>
+            <th scope="col">Цена по количина</th>
+            <th scope="col">Намаление</th>
+            <th scope="col">Промена на Датум</th>
+            <th scope="col">Име на категорија</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.QuantityPerUnit</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Discontinued</td>
+                <td>@item.LastDateUpdated</td>
+                <td>@item.Category.CategoryName</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@using WebShop_Domain.Models;
+@model Categories
+
+<h1>Create Category</h1>
+
+<form class="w-50 text-center m-auto mt-5" method="post">
+    <div class="row">
+        <label asp-for="CategoryName">Име на категорија</label>
+        <input type="text" asp-for="CategoryName" />
+
+        <label asp-for="Description">Опис</label>
+        <input type="text" asp-for="Description" />
+
+        <label asp-for="Price">Цена</label>
+        <input type="text" asp-for="Price" />
+
+        <div class="d-flex justify-content-between mt-4">
+            <a class="btn btn-danger" asp-controller="Category" asp-action="Index">Назад</a>
+            <input type="submit" class="btn btn-success" value="Зачувај" />
+        </div>
+    </div>
+</form>

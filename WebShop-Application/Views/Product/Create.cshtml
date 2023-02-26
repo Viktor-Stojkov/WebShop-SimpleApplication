@@ -1,0 +1,32 @@
+﻿@using WebShop_Domain.Models;
+@model Products
+
+<h1>Create Category</h1>
+
+<form class="w-50 text-center m-auto mt-5" method="post">
+    <div class="row">
+        <label asp-for="ProductName">Име на продукт</label>
+        <input type="text" asp-for="ProductName" />
+
+        <label asp-for="QuantityPerUnit">Количина</label>
+        <input type="number" asp-for="QuantityPerUnit" />
+
+        <label asp-for="UnitPrice">Цена по количина</label>
+        <input type="text" asp-for="UnitPrice" />
+
+        <label asp-for="LastDateUpdated">Промена на Датум</label>
+        <input type="date" asp-for="LastDateUpdated" />
+
+        <label asp-for="Discontinued">Намаление</label>
+        <input type="checkbox" asp-for="Discontinued" />
+
+        <select asp-for="CategoryId" asp-items="@ViewBag.CategoryName">
+            <option value=" ">--Изберете Категорија--</option>
+        </select>
+
+        <div class="d-flex justify-content-between mt-4">
+            <a class="btn btn-danger" asp-controller="Product" asp-action="Index">Назад</a>
+            <input type="submit" class="btn btn-success" value="Зачувај" />
+        </div>
+    </div>
+</form>

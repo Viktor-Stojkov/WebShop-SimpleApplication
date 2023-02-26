@@ -1,0 +1,35 @@
+﻿@using WebShop_Domain.Models;
+
+@model List<Orders>
+
+<a class="btn btn-secondary" asp-controller="Orders" asp-action="Create">Нова Нарачка</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Ид</th>
+            <th scope="col">Датум на нарачка</th>
+            <th scope="col">Достава преку</th>
+            <th scope="col">Товарено</th>
+            <th scope="col">Држава на достава</th>
+            <th scope="col">Град на достава</th>
+            <th scope="col">Адреса на достава</th>
+            <th scope="col">Селектирани Продукти</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+                <td>@item.ShipVia</td>
+                <td>@item.Freight</td>
+                <td>@item.ShipCountry</td>
+                <td>@item.ShipCity</td>
+                <td>@item.ShipAddress</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
